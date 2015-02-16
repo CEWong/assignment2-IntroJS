@@ -1,0 +1,55 @@
+<html>
+<title> Feedback </title>
+<head>
+	<link rel= "stylesheet" href="assignment2.css">
+<script type="text/javascript">
+function validateForm() {
+    var x = document.getElementById("email").value;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) 
+    {
+        alert("Not a valid e-mail address");
+        return false;
+    }
+    var x = document.getElementById("comment").value;
+    if (x == null || x == "")
+    {
+        alert("Cannot leave a blank comment.");
+        return false;
+    }
+}
+
+</script>
+</head>
+
+<body>
+
+<h1> Feedback Form </h1>
+<p>
+
+<form name="feeback" onsubmit="return validateForm()">
+Please enter your name. <br>
+<input type="text" name="name"> <br>
+
+Please enter your email address. <br>
+<input type="text" id="email" name="email"> <br>
+
+Please leave your comment below. <br>
+<textarea name="comment" id="comment" rows="5" cols="60"> </textarea>
+
+<p>
+<input type="submit" value="Submit">
+
+</form>
+
+<p>
+	<a href= "index.html"> Calculator </a> &nbsp &nbsp
+	<a href= "registrationform.html"> Registration Form </a> &nbsp &nbsp
+	<a href= "feedbackform.html"> Feedback Form </a> &nbsp &nbsp
+	<a href= "faq.html"> FAQ </a>
+
+
+
+</body>
+</html>
